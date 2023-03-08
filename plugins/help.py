@@ -6,6 +6,7 @@ from plugins.settings import modules_info
 async def help_command(_: Client, msg: types.Message):
     try:cmd = str(msg.text).split(' ')[1]
     except IndexError:
+        
         help_text = '''
 <b>EternityBot Modules: </b>
 
@@ -18,8 +19,9 @@ async def help_command(_: Client, msg: types.Message):
         
     else:
         if cmd.startswith(prefix):
-            cmd_info = cmd[1:]
-        else:cmd_info = cmd
+            cmd_info = modules_info[cmd[1:]]
+        
+        else:cmd_info = modules_info[cmd]
 
         await msg.edit(f'''
-🔧 Command: <code>{cmd}</code> - <b>{cmd_info}</b>''')
+🔧 Command: <code>{cmd}</code> - <b>{cmd_info[0]}</b>''')

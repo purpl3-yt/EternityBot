@@ -20,7 +20,7 @@ async def warn(msg: types.Message, client: Client, warn_text: str, error = True)
 
 def restart():
     if str(platform.system()).lower() == 'linux':
-        execl(sys.executable, 'python', __file__, *sys.argv[1:])
+        execl(sys.executable, 'python', 'main.py')
     elif str(platform.system()).lower() == 'windows':
-        execl(sys.executable, 'python', __file__, *sys.argv[1:])
+        execl(sys.executable, 'python', 'main.py')
     exit()
