@@ -1,3 +1,3 @@
-#Main settings here
+# Main settings here
 
 modules_info = {}
